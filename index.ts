@@ -6,7 +6,7 @@ const app = express();
 
 dotenv.config();
 
-import {sendEmailEthereal} from './controllers/sendEmail';
+import {sendEmail} from './controllers/sendEmail';
 // error handler
 app.use(express.json());
 
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   res.send('<h1>Email Project</h1> <a href="/send">send email</a>');
 });
 
-app.get('/send', sendEmailEthereal);
+app.get('/send', sendEmail);
 
 const port = process.env.PORT || 3000;
 
